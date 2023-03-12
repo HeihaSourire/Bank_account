@@ -9,7 +9,7 @@ public class Operation {
 	
 	private Date date;
 	
-	private OperationType type;
+	private OperationType type; //deposit or withdrawal
 	
 	private int amount;
 
