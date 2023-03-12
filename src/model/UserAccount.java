@@ -56,15 +56,14 @@ public class UserAccount {
 	    }
 	  }
 	
-	public String showOperations() {
+	public void showOperations() {
 		if (this.operations.size() == 0) {
-			return "There is no operation";
+			System.out.println("There is no operation");
 		} else {
 			for (Operation operation : this.operations) {
-				return operation.toString();
+				System.out.println(operation.toString());
 			}
 		}
-		return null;
 		
 	}
 }

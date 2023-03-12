@@ -1,7 +1,10 @@
 package service;
 
+import java.util.Date;
 import java.util.Scanner;
 
+import model.Operation;
+import model.OperationType;
 import model.UserAccount;
 
 public class UserAccountService implements UserAccountServiceInterface {
@@ -24,7 +27,7 @@ public class UserAccountService implements UserAccountServiceInterface {
 	      f=user.login(name, pwd);
 	      count++;
 	      if (!f) {
-	        System.out.println("Login fail£¬you have"+(3-count)+"times");
+	        System.out.println("Login fail£¬you have "+(3-count)+" times");
 	      }
 	    } while (f==false&&count<3);
 	    
@@ -63,15 +66,24 @@ public class UserAccountService implements UserAccountServiceInterface {
 
 	@Override
 	public void info() {
-		// TODO Auto-generated method stub
-		System.out.println(user.showOperations());
+		user.showOperations();
 		System.out.println("balance : " + user.getBalance());
 	}
 
 	@Override
 	public void addMoney() {
 		// TODO Auto-generated method stub
-
+		System.out.println("Please enter the amount of the deposit : ");
+		int money = inputScanner.nextInt();
+		if (money < 0) {
+			System.out.println("wrong amount, Please enter again");
+			addMoney();
+		} else {
+			user.setBalance(money + user.getBalance());
+			Date date = new Date();
+			user.getOperations().add(new Operation(date, OperationType.DEPOSIT, money));
+			System.out.println("Deposit " + money + " succeed");
+		}
 	}
 
 	@Override
