@@ -14,14 +14,39 @@ public class UserAccount {
 	
 	private ArrayList<Operation> operations;
 
-	public UserAccount(String user_name, String password, int balance) {
+	public UserAccount(String user_name, String password) {
 		super();
 		this.user_name = user_name;
 		this.password = password;
-		this.balance = balance;
 		this.operations = new ArrayList<Operation>();
 	}
 	
+	
+	
+	public int getBalance() {
+		return balance;
+	}
+
+
+
+	public void setBalance(int balance) {
+		this.balance = balance;
+	}
+
+
+
+	public ArrayList<Operation> getOperations() {
+		return operations;
+	}
+
+
+
+	public void setOperations(ArrayList<Operation> operations) {
+		this.operations = operations;
+	}
+
+
+
 	//login in
 	public boolean login(String name,String pwd){
 	    if (this.user_name.equals(name) && this.password.equals(pwd)) {

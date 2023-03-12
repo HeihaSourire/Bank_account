@@ -1,3 +1,6 @@
+/*
+ * Operation Class
+ */
 package model;
 
 import java.util.Date;
@@ -19,7 +22,7 @@ public class Operation {
 
 	@Override
 	public String toString() {
-		return "Operation [" + date + "\t" + type + "\t" + amount + "]";
+		return "Operation [" + date.toString() + "\t" + type + "\t" + amount + "]";
 	}
 	
 	
