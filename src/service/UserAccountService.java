@@ -88,7 +88,20 @@ public class UserAccountService implements UserAccountServiceInterface {
 
 	@Override
 	public void getMoney() {
-		// TODO Auto-generated method stub
+		System.out.println("Please enter the amount of the withdrawal : ");
+		int money = inputScanner.nextInt();
+		if (money < 0) {
+			System.out.println("wrong amount, Please enter again");
+		} else {
+			if (money > user.getBalance()) {
+				System.out.println("Insufficient balance on your account!");
+			} else {
+				user.setBalance(user.getBalance() - money);
+				Date date = new Date();
+				user.getOperations().add(new Operation(date, OperationType.WITHDRAWAL, money));
+				System.out.println("Withdrawal " + money + " succeed");
+			}
+		}
 
 	}
 	
