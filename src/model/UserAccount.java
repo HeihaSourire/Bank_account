@@ -13,7 +13,7 @@ public class UserAccount {
 	private int balance = 0;
 	
 	private ArrayList<Operation> operations;
-
+// this is the modification on the master branch
 	public UserAccount(String user_name, String password) {
 		super();
 		this.user_name = user_name;
