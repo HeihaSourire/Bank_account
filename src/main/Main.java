@@ -1,5 +1,5 @@
 //This is the 1st modification
-//This is the second modification
+//This is the conflict modification
 package main;
 
 import service.UserAccountService;
